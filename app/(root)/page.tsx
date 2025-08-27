@@ -11,7 +11,6 @@ import Footer from "@/components/sections/Footer"
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
       <main>
         <HeroSection />
         <div className="flex flex-col md:flex-row gap-8 container mx-auto px-4 py-12">
@@ -24,10 +23,9 @@ export default function Home() {
         </div>
         <AboutUsSection />
         <AcademicsSection />
-        <NewsAnnouncementsSection />
-        <GallerySection />
+        {/* <NewsAnnouncementsSection /> */}
+        {/* <GallerySection /> */}
       </main>
-      <Footer />
     </div>
   )
 }
