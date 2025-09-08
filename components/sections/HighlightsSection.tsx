@@ -1,8 +1,3 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ChevronRight } from "lucide-react"
 import { sanityFetch } from "@/sanity/lib/live"
 import { HIGHLIGHT_POSTS_QUERY } from "@/lib/queries"
 import PostCard from "../PostCard"
@@ -18,7 +13,7 @@ export default async function HighlightsSection() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {posts.map((post) => (
-                        <PostCard key={post._id} {...post} />
+                        <PostCard key={post._id} {...post} views={post.views ?? 0} />
                     ))}
                 </div>
             </div>

@@ -1,12 +1,8 @@
-import Header from "@/components/sections/Header"
 import HeroSection from "@/components/sections/HeroSection"
 import HighlightsSection from "@/components/sections/HighlightsSection"
 import AnnouncementsSection from "@/components/sections/AnnouncementsSection"
 import AboutUsSection from "@/components/sections/AboutUsSection"
 import AcademicsSection from "@/components/sections/AcademicsSection"
-import NewsAnnouncementsSection from "@/components/sections/NewsAnnouncementsSection"
-import GallerySection from "@/components/sections/GallerySection"
-import Footer from "@/components/sections/Footer"
 
 export default function Home() {
   return (

@@ -8,9 +8,7 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import {
     Calendar,
-    Clock,
     Eye,
-    MessageCircle,
     Share2,
     User,
     ArrowRight,

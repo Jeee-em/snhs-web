@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Award, History, Layers, Users } from "lucide-react"
+import { Award, Flag, History, Layers, Users, Cross, TreeDeciduous } from "lucide-react"
 
 export default function AboutUsSection() {
   return (
@@ -74,10 +74,10 @@ export default function AboutUsSection() {
                   </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                     {[
-                      { value: "Maka-Diyos", icon: <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[#003366]" /> },
-                      { value: "Makatao", icon: <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[#003366]" /> },
-                      { value: "Makakalikasan", icon: <Users className="h-5 w-5 sm:h-6 sm:w-6 text-[#003366]" /> },
-                      { value: "Makabansa", icon: <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[#003366]" /> },
+                      { value: "Maka-Diyos", icon: <Cross className="h-5 w-5 sm:h-6 sm:w-6 text-[#003366]" /> },
+                      { value: "Makatao", icon: <Users className="h-5 w-5 sm:h-6 sm:w-6 text-[#003366]" /> },
+                      { value: "Makakalikasan", icon: <TreeDeciduous className="h-5 w-5 sm:h-6 sm:w-6 text-[#003366]" /> },
+                      { value: "Makabansa", icon: <Flag className="h-5 w-5 sm:h-6 sm:w-6 text-[#003366]" /> },
                     ].map((item, index) => (
                       <div
                         key={index}

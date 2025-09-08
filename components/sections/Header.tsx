@@ -28,6 +28,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "#about", label: "About" },
     { href: "/academics", label: "Academics" },
+    { href: "/announcements", label: "Announcements" },
     { href: "/blog", label: "Blog" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },
@@ -66,20 +67,16 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <Button className="hidden lg:flex bg-[#003366] hover:bg-[#002244] text-white">Student Portal</Button>
-          
-          {/* Mobile Menu Button */}
-          <Button 
-            variant="outline" 
-            size="icon" 
-            className="lg:hidden"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </div>
+        {/* Mobile Menu Button */}
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className="lg:hidden"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </Button>
       </div>
 
       {/* Mobile Navigation Menu */}
@@ -97,14 +94,6 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-gray-200">
-                <Button 
-                  className="w-full bg-[#003366] hover:bg-[#002244] text-white"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Student Portal
-                </Button>
-              </div>
             </div>
           </nav>
         </div>

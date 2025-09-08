@@ -1,19 +1,15 @@
 'use client'
 
-import Image from "next/image"
-import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import {
-    Filter,
     TrendingUp,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Pagination } from "@/components/ui/pagination"
 import HeroBlog from "@/components/sections/HeroBlog"
-import PopularPosts from "@/components/PopularPosts"
 import { 
     POSTS_PAGINATED_QUERY, 
     POSTS_BY_CATEGORY_PAGINATED_QUERY, 
@@ -27,9 +23,7 @@ import {
 } from "@/lib/queries"
 import { client } from "@/sanity/lib/client"
 import PostCard from "@/components/PostCard"
-import AnnouncementsSection from "@/components/sections/AnnouncementsSection"
 import FeaturedPost from "@/components/FeaturedPost"
-import ViewTestComponent from "@/components/ViewTestComponent"
 
 const POSTS_PER_PAGE = 6
 

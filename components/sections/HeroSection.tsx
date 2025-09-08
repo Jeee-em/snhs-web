@@ -1,9 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronRight, FileText, Users } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
 export default function HeroSection() {
     return (

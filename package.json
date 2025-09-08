@@ -12,7 +12,9 @@
     "typegen": "sanity schema extract --path=./sanity/extract.json && sanity typegen generate"
   },
   "dependencies": {
+    "@portabletext/react": "^4.0.2",
     "@radix-ui/react-accordion": "^1.2.12",
+    "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.12",

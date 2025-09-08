@@ -3,7 +3,7 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
 import Image from "next/image";
-import { ArrowRight, Calendar, Clock, Eye, MessageCircle, User, Share2 } from "lucide-react";
+import { ArrowRight, Calendar, Eye, User, Share2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { POSTS_QUERYResult } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";

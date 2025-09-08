@@ -7,6 +7,7 @@ import { BookOpen, Calendar, Clock, GraduationCap, Users, AlertTriangle, Bell } 
 import { client } from "@/sanity/lib/client"
 import { ANNOUNCEMENTS_QUERY } from "@/lib/queries"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export default function AnnouncementsSection() {
   const [announcements, setAnnouncements] = useState<any[]>([])
@@ -163,8 +164,8 @@ export default function AnnouncementsSection() {
               )}
             </CardContent>
             <CardFooter className="border-t border-white/10 pt-3 sm:pt-4 p-4 sm:px-6">
-              <Button className="w-full text-sm sm:text-base bg-[#FFCC00] text-[#003366] hover:bg-[#FFCC00]/90 py-2 sm:py-3">
-                View All Announcements
+              <Button asChild className="w-full text-sm sm:text-base bg-[#FFCC00] text-[#003366] hover:bg-[#FFCC00]/90 py-2 sm:py-3">
+                <Link href="/announcements">View All Announcements</Link>
               </Button>
             </CardFooter>
           </Card>

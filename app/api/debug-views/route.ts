@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { client } from '@/sanity/lib/client'
 
 // This is a utility endpoint to add mock views to posts for testing
