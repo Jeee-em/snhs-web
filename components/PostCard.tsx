@@ -13,7 +13,6 @@ import Link from "next/link";
 const PostCard = (props: POSTS_QUERYResult[0]) => {
     const { title, author, mainImage, publishedAt, categories, views } = props
 
-    // Format the date
     const formatDate = (dateString: string | null) => {
         if (!dateString) return 'No date';
         return new Date(dateString).toLocaleDateString('en-US', {
@@ -23,7 +22,6 @@ const PostCard = (props: POSTS_QUERYResult[0]) => {
         });
     };
 
-    // Format view count
     const formatViews = (viewCount: number | null | undefined) => {
         if (!viewCount) return '0';
         if (viewCount >= 1000) {
@@ -70,7 +68,6 @@ const PostCard = (props: POSTS_QUERYResult[0]) => {
                     </h3>
                 </Link>
                 <p className="text-xs text-muted-foreground mb-10 line-clamp-2">
-                    {/* Extract text from body blocks for excerpt */}
                     {props.body && props.body.length > 0
                         ? props.body
                             .filter((block): block is Extract<typeof block, { _type: 'block' }> =>
@@ -78,6 +75,7 @@ const PostCard = (props: POSTS_QUERYResult[0]) => {
                             )
                             .slice(0, 1)
                             .map(block =>
+                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                 block.children?.map((child: any) => child.text).join('') || ''
                             ).join(' ').substring(0, 80) + '...'
                         : 'No content available...'
@@ -87,7 +85,7 @@ const PostCard = (props: POSTS_QUERYResult[0]) => {
                     <div className="flex items-center gap-2 text-xs text-muted-foreground min-w-0">
                         <div className="flex items-center gap-1">
                             <Eye className="h-3 w-3 flex-shrink-0" />
-                            <span>{formatViews((props as any).views)}</span>
+                            <span>{formatViews(views)}</span>
                         </div>
                         <Button
                             variant="ghost"
@@ -95,10 +93,10 @@ const PostCard = (props: POSTS_QUERYResult[0]) => {
                             className="p-0 h-auto text-muted-foreground hover:text-[#003366] flex-shrink-0"
                             onClick={() => {
                                 if (typeof window !== 'undefined') {
-                                    navigator.share?.({
+                                    void (navigator.share?.({
                                         title: title || 'Blog Post',
                                         url: `${window.location.origin}/blog/${props.slug?.current}`
-                                    }) || navigator.clipboard?.writeText(`${window.location.origin}/blog/${props.slug?.current}`)
+                                    }) || navigator.clipboard?.writeText(`${window.location.origin}/blog/${props.slug?.current}`))
                                 }
                             }}
                         >

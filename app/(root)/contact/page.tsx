@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import {
     ArrowLeft,
@@ -85,6 +84,7 @@ export default function ContactPage() {
         },
     ]
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const faqs = [
         {
             category: "Enrollment & Admission",
@@ -277,7 +277,7 @@ export default function ContactPage() {
                             </h1>
 
                             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
-                                We're here to help! Reach out to us for inquiries, support, or to learn more about our programs and
+                                We&apos;re here to help! Reach out to us for inquiries, support, or to learn more about our programs and
                                 services.
                             </p>
 
@@ -599,7 +599,7 @@ export default function ContactPage() {
                                                             required
                                                         />
                                                         <label htmlFor="privacy" className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                                                            I agree to the processing of my personal data in accordance with the school's privacy
+                                                            I agree to the processing of my personal data in accordance with the school&apos;s privacy
                                                             policy and consent to receive communications regarding my inquiry.
                                                         </label>
                                                     </div>
@@ -618,8 +618,8 @@ export default function ContactPage() {
                                         <div>
                                             <h3 className="text-lg sm:text-xl font-bold text-school-blue mb-3 sm:mb-4">Get in Touch</h3>
                                             <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
-                                                We're here to help! Whether you have questions about enrollment, academic programs, or any other
-                                                concerns, don't hesitate to reach out to us.
+                                                We&apos;re here to help! Whether you have questions about enrollment, academic programs, or any other
+                                                concerns, don&apos;t hesitate to reach out to us.
                                             </p>
                                         </div>
 
@@ -653,7 +653,7 @@ export default function ContactPage() {
                                                     <p className="text-xs sm:text-sm text-muted-foreground">(062) 123-4567 (24/7)</p>
                                                 </div>
                                                 <div>
-                                                    <h4 className="font-medium text-school-blue text-sm sm:text-base">Principal's Mobile</h4>
+                                                    <h4 className="font-medium text-school-blue text-sm sm:text-base">Principal&apos;s Mobile</h4>
                                                     <p className="text-xs sm:text-sm text-muted-foreground">+63 912 345 6789</p>
                                                 </div>
                                                 <div>

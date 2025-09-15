@@ -11,7 +11,7 @@ export default function AboutUsSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12">
           <Badge className="mb-2 bg-[#003366]/10 text-[#003366] hover:bg-[#003366]/20">About Us</Badge>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003366] mb-4">Our School's Foundation</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003366] mb-4">Our School&apos;s Foundation</h2>
           <p className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground">
             Learn about our history, values, and the principles that guide our educational approach.
           </p>
@@ -119,7 +119,7 @@ export default function AboutUsSection() {
                       <p>
                         Siay National High School was established in 1965 as a response to the growing educational
                         needs of the community. What began as a small school with just three classrooms and five
-                        teachers has grown into one of the region's most respected educational institutions.
+                        teachers has grown into one of the region&apos;s most respected educational institutions.
                       </p>
                       <p>
                         Throughout the decades, SNHS has continuously evolved, adapting to changing educational
@@ -131,7 +131,7 @@ export default function AboutUsSection() {
                         growth with the addition of new buildings, laboratories, and sports facilities.
                       </p>
                       <p>
-                        Today, Siay National High School stands as a testament to the community's dedication to
+                        Today, Siay National High School stands as a testament to the community&apos;s dedication to
                         education, serving thousands of students and producing graduates who have excelled in
                         various fields both locally and internationally.
                       </p>
@@ -281,7 +281,7 @@ export default function AboutUsSection() {
                       <div className="space-y-6 sm:space-y-8">
                         {[
                           { year: "2023", event: "Opened new Science and Technology Building" },
-                          { year: "2020", event: "Celebrated School's 55th Anniversary" },
+                          { year: "2020", event: "Celebrated School&apos;s 55th Anniversary" },
                           {
                             year: "2015",
                             event: "Recognized as one of the Top 50 Public High Schools in the Philippines",

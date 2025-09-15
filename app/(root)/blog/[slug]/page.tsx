@@ -3,12 +3,47 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { sanityFetch } from '@/sanity/lib/live';
-import { PortableText } from 'next-sanity';
+import { PortableText, PortableTextBlock } from 'next-sanity';
 import { POST_QUERY } from '@/lib/queries';
 import { notFound } from 'next/navigation';
 import { urlFor } from '@/sanity/lib/image';
 import { portableTextComponents } from '@/components/PortableTextComponents';
 import ViewTracker from '@/components/ViewTracker';
+
+// Type definitions - matching Sanity's actual return types
+interface Category {
+    _id: string;
+    slug: {
+        current?: string;
+    } | null;
+    title: string | null;
+}
+
+interface Author {
+    name: string;
+    image?: {
+        asset: {
+            _ref: string;
+        };
+    };
+}
+
+interface BlogPost {
+    _id: string;
+    title: string;
+    body: PortableTextBlock[]; // PortableText blocks
+    mainImage?: {
+        asset: {
+            _ref: string;
+        };
+        alt?: string;
+    };
+    publishedAt: string;
+    isFeatured: boolean;
+    views?: number;
+    categories: Category[];
+    author: Author;
+}
 
 const BlogPost = async ({
     params,
@@ -98,7 +133,7 @@ const BlogPost = async ({
                             
                             <div className="flex items-center gap-1">
                                 <Eye className="h-4 w-4" />
-                                <span>{formatViews((post as any).views)} views</span>
+                                <span>{formatViews((post as BlogPost).views)} views</span>
                             </div>
                         </div>
                     </div>
@@ -123,12 +158,12 @@ const BlogPost = async ({
                         {post.categories && post.categories.length > 0 && (
                             <div className="mt-12 pt-8 border-t border-gray-200">
                                 <div className="flex flex-wrap gap-2">
-                                    {post.categories.map((category: any) => (
+                                    {post.categories.map((category: Category) => (
                                         <span 
                                             key={category._id}
                                             className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
                                         >
-                                            {category.title}
+                                            {category.title || 'Uncategorized'}
                                         </span>
                                     ))}
                                 </div>

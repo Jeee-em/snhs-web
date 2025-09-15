@@ -1,5 +1,16 @@
 import { client } from '@/sanity/lib/client'
 
+// Type definition for blog post
+interface BlogPost {
+    _id: string;
+    title: string | null;
+    slug: {
+        current?: string;
+    } | null;
+    publishedAt: string;
+    views?: number | null;
+}
+
 /**
  * Check if a view should be counted (simple client-side rate limiting)
  * This prevents rapid repeated views from the same session
@@ -124,7 +135,7 @@ export async function incrementPostViews(postId: string): Promise<boolean> {
  * @param limit - Number of posts to return (default: 5)
  * @returns Promise<any[]>
  */
-export async function getMostViewedPosts(limit: number = 5): Promise<any[]> {
+export async function getMostViewedPosts(limit: number = 5): Promise<BlogPost[]> {
     try {
         // Validate limit parameter
         const safeLimit = Math.min(Math.max(1, Math.floor(limit)), 50) // Between 1 and 50

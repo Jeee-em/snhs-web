@@ -31,7 +31,7 @@ export default function AcademicsSection() {
                 <Badge className="mb-2 bg-[#FFCC00] text-[#003366]">Core Program</Badge>
                 <h3 className="text-2xl font-bold text-white mb-2">K to 12 Curriculum</h3>
                 <p className="text-white/80 mb-4">
-                  Our comprehensive K to 12 program follows the Department of Education's curriculum standards,
+                  Our comprehensive K to 12 program follows the Department of Education&apos;s curriculum standards,
                   preparing students for higher education and future careers.
                 </p>
                 <Button className="bg-white text-[#003366] hover:bg-white/90">Learn More</Button>

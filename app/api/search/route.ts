@@ -1,18 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { client } from '@/sanity/lib/client'
 
+// Type definitions for Sanity portable text
+interface PortableTextSpan {
+  _type: 'span';
+  text?: string;
+  marks?: string[];
+  _key: string;
+}
+
+interface PortableTextBlock {
+  _type: 'block';
+  children?: PortableTextSpan[];
+  style?: string;
+  _key: string;
+}
+
+type PortableTextContent = PortableTextBlock | { _type: string; [key: string]: unknown };
+
 // Helper function to extract plain text from Sanity portable text
-function extractTextFromPortableText(portableText: any[]): string {
+function extractTextFromPortableText(portableText: PortableTextContent[]): string {
   if (!portableText || !Array.isArray(portableText)) {
     return ''
   }
   
   return portableText
-    .filter((block) => block._type === 'block' && block.children)
+    .filter((block): block is PortableTextBlock => block._type === 'block' && 'children' in block)
     .map((block) =>
       block.children
-        ?.filter((child: any) => child._type === 'span')
-        ?.map((child: any) => child.text || '')
+        ?.filter((child): child is PortableTextSpan => child._type === 'span')
+        ?.map((child) => child.text || '')
         ?.join('') || ''
     )
     .join(' ')
@@ -86,7 +103,11 @@ export async function GET(request: NextRequest) {
         const searchTerm = `${query.trim()}*`
 
         // Build GROQ query parameters
-        const params: any = {
+        const params: {
+            searchTerm: string;
+            limit: number;
+            categoryTitle?: string;
+        } = {
             searchTerm,
             limit
         }
@@ -128,7 +149,10 @@ export async function GET(request: NextRequest) {
         const results = await client.fetch(finalQuery, params)
 
         // Process results to add excerpts
-        const processedResults = results.map((post: any) => ({
+        const processedResults = results.map((post: {
+            body: PortableTextContent[];
+            [key: string]: unknown;
+        }) => ({
             ...post,
             excerpt: createExcerpt(extractTextFromPortableText(post.body), 150)
         }))

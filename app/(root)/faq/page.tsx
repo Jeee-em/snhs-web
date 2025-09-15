@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import {
     ArrowLeft,
@@ -229,7 +228,7 @@ export default function FAQPage() {
 
                                 <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto mb-12 px-4">
                                     Find quick answers to common questions about Siay National High School. From enrollment 
-                                    procedures to academic programs, we've got you covered.
+                                    procedures to academic programs, we&apos;ve got you covered.
                                 </p>
                             </div>
                         </div>
@@ -283,7 +282,7 @@ export default function FAQPage() {
                                 <HelpCircle className="h-12 w-12 sm:h-16 sm:w-16 text-school-blue mx-auto mb-4 sm:mb-6" />
                                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Still Need Help?</h3>
                                 <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-                                    Can't find the answer you're looking for? Our support team is ready to assist you with any questions or concerns.
+                                    Can&apos;t find the answer you&apos;re looking for? Our support team is ready to assist you with any questions or concerns.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
                                     <Link href="/contact">

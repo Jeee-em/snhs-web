@@ -23,7 +23,7 @@ import {
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
@@ -34,7 +34,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 import { client } from "@/sanity/lib/client"
-import { PortableText } from '@portabletext/react'
+import { PortableText, type PortableTextBlock } from '@portabletext/react'
 
 // GROQ Queries
 const ANNOUNCEMENTS_QUERY = `*[
@@ -77,7 +77,7 @@ interface Announcement {
     priority: 'low' | 'normal' | 'high' | 'urgent'
     category: string
     excerpt: string
-    content: any[] // PortableText content
+    content: PortableTextBlock[] // PortableText content
     targetAudience: string[]
     publishedAt: string
     expiresAt?: string

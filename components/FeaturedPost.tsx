@@ -19,6 +19,7 @@ import { FEATURED_POST_QUERY } from "@/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
 const FeaturedPost = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [featuredPost, setFeaturedPost] = useState<any>(null)
     const [loading, setLoading] = useState(true)
 
@@ -123,9 +124,12 @@ const FeaturedPost = () => {
                         {featuredPost.body && featuredPost.body.length > 0 && (
                             <p className="text-white/80 mb-3 sm:mb-4 max-w-3xl line-clamp-2 sm:line-clamp-3 text-sm sm:text-base">
                                 {featuredPost.body
+                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                     .filter((block: any) => block._type === 'block' && block.children)
                                     .slice(0, 1)
+                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                     .map((block: any) =>
+                                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                         block.children?.map((child: any) => child.text || '').join('') || ''
                                     )
                                     .join(' ')
@@ -145,10 +149,10 @@ const FeaturedPost = () => {
                                         className="text-white hover:text-[#FFCC00] p-0 h-auto text-xs sm:text-sm"
                                         onClick={() => {
                                             if (typeof window !== 'undefined') {
-                                                navigator.share?.({
+                                                void (navigator.share?.({
                                                     title: featuredPost.title,
                                                     url: `${window.location.origin}/blog/${featuredPost.slug?.current}`
-                                                }) || navigator.clipboard?.writeText(`${window.location.origin}/blog/${featuredPost.slug?.current}`)
+                                                }) || navigator.clipboard?.writeText(`${window.location.origin}/blog/${featuredPost.slug?.current}`))
                                             }
                                         }}
                                     >

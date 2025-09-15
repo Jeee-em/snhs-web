@@ -11,6 +11,7 @@ const DEBUG_QUERY = `*[_type == "post" && defined(slug.current)]{
 }|order(coalesce(views, 0) desc)[0...5]`
 
 export default function DebugViews() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [posts, setPosts] = useState<any[]>([])
 
   useEffect(() => {

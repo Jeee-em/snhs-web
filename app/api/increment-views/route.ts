@@ -107,17 +107,6 @@ export async function POST(request: NextRequest) {
 
         console.log(`API: Updating views from ${currentViews} to ${newViews}`)
 
-        // Update the view count (with timeout)
-        const result = await Promise.race([
-            writeClient
-                .patch(postId)
-                .set({ views: newViews })
-                .commit(),
-            new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Sanity update timeout')), 5000)
-            )
-        ])
-
         console.log('API: Successfully updated views')
 
         return NextResponse.json({

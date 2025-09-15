@@ -10,6 +10,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 
 export default function AnnouncementsSection() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [announcements, setAnnouncements] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 
