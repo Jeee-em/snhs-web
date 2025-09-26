@@ -39,7 +39,7 @@ export default function Header() {
       <div className="container flex h-20 items-center justify-between px-5 md:px-10">
         <div className="flex items-center gap-3">
           <div className="relative h-12 w-12 overflow-hidden rounded-full bg-gradient-to-br from-[#003366] to-[#002244] shadow-md">
-            <Image src="/images/snhs-logo.jfif"
+            <Image src="/images/snhs-logo.jpg"
               alt="Siay National High School Logo"
               fill
               sizes="48px"

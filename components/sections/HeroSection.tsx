@@ -9,7 +9,7 @@ export default function HeroSection() {
         <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-gradient-to-br from-[#003366] via-[#002855] to-[#001F40]">
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/images/snhs.jfif"
+                    src="/images/snhs.jpg"
                     alt="Students at Siay National High School"
                     fill
                     className="object-cover opacity-50 mix-blend-overlay"

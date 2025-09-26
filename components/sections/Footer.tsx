@@ -10,7 +10,7 @@ export default function Footer() {
                     <div>
                         <div className="flex items-center gap-3 mb-6">
                             <div className="relative h-12 w-12 overflow-hidden rounded-full bg-gradient-to-br from-[#FFCC00] to-[#FFA500] shadow-md">
-                                <Image src="/images/snhs-logo.jfif"
+                                <Image src="/images/snhs-logo.jpg"
                                     alt="Siay National High School Logo"
                                     fill
                                     className="object-cover"
