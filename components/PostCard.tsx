@@ -37,6 +37,7 @@ const PostCard = (props: POSTS_QUERYResult[0]) => {
                         src={urlFor(mainImage).width(800).height(400).quality(90).format('webp').url()}
                         alt={mainImage.alt || title || 'Post image'}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                         priority={false}
                     />

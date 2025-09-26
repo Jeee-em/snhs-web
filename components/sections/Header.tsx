@@ -42,6 +42,7 @@ export default function Header() {
             <Image src="/images/snhs-logo.jfif"
               alt="Siay National High School Logo"
               fill
+              sizes="48px"
               className="object-cover"
             />
           </div>
